@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: spontaneous-config-service
+
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/shared #tells spring where to locate the config file
+  
+  security:
+    user:
+      name: test
+      password: 12345
+  
+  profiles:
+    active: native #we are using native because the config server uses a git repo by default
+
+server:
+  port: 8888 #the port where the config-server will be acessible
