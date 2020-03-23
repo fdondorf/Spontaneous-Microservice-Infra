@@ -20,9 +20,9 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-    <start-class>org.spontaneous.serviceinfra.configserver.ConfigServerBootApp</start-class>
-    <spring.boot.version>2.2.5.RELEASE</spring.boot.version>
-    <devon4j.version>3.1.0</devon4j.version>
+	    <start-class>org.spontaneous.serviceinfra.configserver.ConfigServerBootApp</start-class>
+	    <spring.boot.version>2.2.5.RELEASE</spring.boot.version>
+	    <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
   
   <dependencyManagement>  
@@ -46,7 +46,6 @@
     
     <dependency>
       <groupId>org.springframework.cloud</groupId>
-      <!-- <artifactId>spring-cloud-starter-eureka</artifactId> -->
        <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
     </dependency>
   </dependencies>

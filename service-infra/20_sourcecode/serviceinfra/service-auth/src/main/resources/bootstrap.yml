@@ -14,3 +14,4 @@ oauth:
   clientSecret: spontaneous-secret
   tokenValiditySeconds: 315360000
   tokenValidityAfterBusinessHoursMinutes: 15
+ 

@@ -1,6 +1,6 @@
-package org.spontaneous.serviceinfra.auth.general.configuration;
+package org.spontaneous.serviceinfra.auth.configuration;
 
-import org.spontaneous.serviceinfra.auth.auth.service.impl.CustomUserDetailsService;
+import org.spontaneous.serviceinfra.auth.service.impl.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -51,7 +51,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
   @Override
   public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 
-    String encodedClientSecret = this.passwordEncoder.encode(this.clientSecret); // assume encoded value is $%*@DJ#
+    String encodedClientSecret = this.passwordEncoder.encode(this.clientSecret);
 
     clients.inMemory().withClient(this.clientId).secret(encodedClientSecret).authorizedGrantTypes("password")
         .authorities("ROLE_USER", "ROLE_ADMIN", "ROLE_SUPERADMIN").scopes("tracking").resourceIds(this.resourceId);

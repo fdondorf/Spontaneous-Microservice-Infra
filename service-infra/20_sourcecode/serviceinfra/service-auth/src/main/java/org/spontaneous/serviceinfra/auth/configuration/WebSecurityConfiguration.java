@@ -1,6 +1,6 @@
-package org.spontaneous.serviceinfra.auth.general.configuration;
+package org.spontaneous.serviceinfra.auth.configuration;
 
-import org.spontaneous.serviceinfra.auth.auth.service.impl.CustomUserDetailsService;
+import org.spontaneous.serviceinfra.auth.service.impl.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,11 +11,10 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.header.writers.StaticHeadersWriter;
 
 /**
  * Spring WebSecurity configuration.
- * <p>
- * The AuthenticationManager uses the LiferayAuthenticationProvider as AuthenticationProvider to check users.
  *
  * @author Florian Dondorf
  *
@@ -30,17 +29,21 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
   @Override
   protected void configure(HttpSecurity http) throws Exception {
 
-    // http.headers().addHeaderWriter(new StaticHeadersWriter("Server", "Spontaneous Running Backend"));
-    // http.requestMatchers().antMatchers("/spontaneous/secure/**");
-    // http.csrf().disable();
-    //
- // @formatter:off
-    http
-            .authorizeRequests().antMatchers("/spontaneous/secure/auth/**").permitAll()
-            .anyRequest().authenticated()
-            .and()
-            .csrf().disable();
-    // @formatter:on
+//     http.headers().addHeaderWriter(new StaticHeadersWriter("Server", "Spontaneous Auth Service"));
+//     http.requestMatchers().antMatchers("/uaa/spontaneous/secure/**");
+//     http.csrf().disable();
+//     http.httpBasic();
+     
+	  http
+      .authorizeRequests()
+      .anyRequest().authenticated()
+      //.antMatchers("/users/**").authenticated()
+      //.antMatchers("/users/**").permitAll()
+      .and().httpBasic();
+
+     // add this line to use H2 web console
+     http.headers().frameOptions().disable();
+
   }
 
   @Override

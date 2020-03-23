@@ -11,9 +11,9 @@ zuul:
       stripPrefix: false #if zuul should replace the "/uaa/" segment
       sensitiveHeaders:
 
-    account-service:
-      path: /accounts/**
-      serviceId: account-service
+    spontaneous-user-service:
+      path: /user/**
+      serviceId: spontaneous-user-service
       stripPrefix: false
       sensitiveHeaders:
 

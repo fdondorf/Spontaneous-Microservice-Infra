@@ -19,8 +19,8 @@
 
 	<properties>
 		<start-class>org.spontaneous.serviceinfra.eureka.EurekaBootApp</start-class>
-    <spring.boot.version>2.2.5.RELEASE</spring.boot.version>
-    <devon4j.version>3.1.0</devon4j.version>
+	    <spring.boot.version>2.2.5.RELEASE</spring.boot.version>
+	    <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
   
   
@@ -64,10 +64,6 @@
           </excludes>
         </configuration>
       </plugin>
-<!--       <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin> -->
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
