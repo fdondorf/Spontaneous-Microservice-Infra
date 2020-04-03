@@ -1,13 +1,17 @@
-spring:
-  data:
-    mongodb:
-      host: localhost
-      port: 27017
-      username: oauth-user
-      password: password
-      database: oauth-db
-      
+security:
+  oauth2:
+    client:
+      clientId: spontaneous-client
+      clientSecret: spontaneous-secret
+      accessTokenUri: http://localhost:8081/uaa/oauth/token
+      grant-type: client_credentials
+      scope: server
+
 server:
   servlet:
-    context-path: /user
+    context-path: /spontaneous/api/user
   port: 8083
+
+feign:
+  hystrix:
+    enabled: true

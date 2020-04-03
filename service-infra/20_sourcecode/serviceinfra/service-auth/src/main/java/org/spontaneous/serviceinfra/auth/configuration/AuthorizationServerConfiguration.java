@@ -74,7 +74,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
   public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 
     endpoints.tokenStore(tokenStore()).authenticationManager(this.authenticationManager)
-        .userDetailsService(this.userDetailsService).pathMapping("/oauth/token", "/spontaneous/secure/auth/token");
+        .userDetailsService(this.userDetailsService); //.pathMapping("/oauth/token", "/spontaneous/secure/auth/token");
   }
 
 }

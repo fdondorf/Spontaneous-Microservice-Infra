@@ -7,9 +7,9 @@ import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 
+import org.spontaneous.serviceinfra.auth.dataaccess.api.repo.RoleRepository;
+import org.spontaneous.serviceinfra.auth.dataaccess.api.repo.UserRepository;
 import org.spontaneous.serviceinfra.auth.entity.UserEntity;
-import org.spontaneous.serviceinfra.auth.repository.api.RoleRepository;
-import org.spontaneous.serviceinfra.auth.repository.api.UserRepository;
 import org.spontaneous.serviceinfra.auth.service.api.Gender;
 import org.spontaneous.serviceinfra.auth.service.api.User;
 import org.spontaneous.serviceinfra.auth.service.api.UserService;
@@ -36,9 +36,6 @@ import org.springframework.web.bind.annotation.RestController;
 @Produces(value = MediaType.APPLICATION_JSON_VALUE)
 public class UserUnsecureController {
 
-  @Inject
-  private UserService userService;
-  
   @Inject
   private UserRepository userRepository;
 

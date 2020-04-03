@@ -2,14 +2,15 @@ package org.spontaneous.serviceinfra.auth.service.impl.rest;
 
 import java.security.Principal;
 import java.util.Arrays;
+import java.util.UUID;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 
+import org.spontaneous.serviceinfra.auth.dataaccess.api.repo.RoleRepository;
+import org.spontaneous.serviceinfra.auth.dataaccess.api.repo.UserRepository;
 import org.spontaneous.serviceinfra.auth.entity.UserEntity;
-import org.spontaneous.serviceinfra.auth.repository.api.RoleRepository;
-import org.spontaneous.serviceinfra.auth.repository.api.UserRepository;
 import org.spontaneous.serviceinfra.auth.service.api.Gender;
 import org.spontaneous.serviceinfra.auth.service.api.User;
 import org.spontaneous.serviceinfra.auth.service.api.UserService;
@@ -52,7 +53,15 @@ public class UserController {
     return principal;
   }
 
-
+  
+  @GetMapping("/foosecure")
+  public UserDto getFooSecure() {
+	  UserDto userDto = new UserDto();
+	  userDto.setId(10L);
+	  userDto.setEmail("test@test.de");
+	  return userDto;
+  }
+  
   private UserDto toDto(User user) {
 
     UserDto userDto = new UserDto();

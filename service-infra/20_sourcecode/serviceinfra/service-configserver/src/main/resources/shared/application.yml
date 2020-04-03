@@ -9,5 +9,15 @@ eureka:
 security:
   oauth2:
     resource:
-      user-info-uri: http://localhost:8081/uaa/user/current
-      token-info-uri: http://localhost:8081/uaa/oauth/check_token
+      user-info-uri: http://localhost:8081/spontaneous/api/uaa/users/secure/current
+      token-info-uri: http://localhost:8081/spontaneous/api/uaa/oauth/check_token
+      
+spontaneous:
+  client:
+    apiVersion: 0.0.1
+    validApiVersions: 0.0.1,0.0.2,1.0.0
+    
+    android:
+      validAppVersions: 0,1,2
+      recommendedAppVersion: 0.0.1
+      validAppKeys: b1b8af6f-bafa-47ba-bf4a-cde83517934b

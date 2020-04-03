@@ -1,4 +1,4 @@
-package org.spontaneous.serviceinfra.auth.repository.api;
+package org.spontaneous.serviceinfra.auth.dataaccess.api.repo;
 
 import org.spontaneous.serviceinfra.auth.entity.RoleEntity;
 import org.springframework.data.repository.CrudRepository;

@@ -1,4 +1,4 @@
-package org.spontaneous.serviceinfra.auth.repository.api;
+package org.spontaneous.serviceinfra.auth.dataaccess.api.repo;
 
 import java.util.List;
 import java.util.Optional;

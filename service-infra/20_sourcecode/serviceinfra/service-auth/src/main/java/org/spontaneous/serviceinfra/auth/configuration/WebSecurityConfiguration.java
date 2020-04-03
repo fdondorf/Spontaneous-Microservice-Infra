@@ -37,8 +37,6 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	  http
       .authorizeRequests()
       .anyRequest().authenticated()
-      //.antMatchers("/users/**").authenticated()
-      //.antMatchers("/users/**").permitAll()
       .and().httpBasic();
 
      // add this line to use H2 web console
