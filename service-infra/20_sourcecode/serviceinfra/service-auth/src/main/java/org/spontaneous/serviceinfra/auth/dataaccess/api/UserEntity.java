@@ -1,4 +1,4 @@
-package org.spontaneous.serviceinfra.auth.entity;
+package org.spontaneous.serviceinfra.auth.dataaccess.api;
 
 import java.io.Serializable;
 import java.util.List;

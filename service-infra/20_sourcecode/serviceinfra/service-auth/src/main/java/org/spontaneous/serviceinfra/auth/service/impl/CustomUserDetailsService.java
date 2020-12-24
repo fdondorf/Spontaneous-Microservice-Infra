@@ -3,25 +3,25 @@ package org.spontaneous.serviceinfra.auth.service.impl;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import javax.inject.Inject;
-import javax.inject.Named;
 
+import org.spontaneous.serviceinfra.auth.dataaccess.api.UserEntity;
 import org.spontaneous.serviceinfra.auth.dataaccess.api.repo.UserRepository;
-import org.spontaneous.serviceinfra.auth.entity.UserEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 /**
  * @author Florian Dondorf
  *
  */
-@Named
+@Service
 public class CustomUserDetailsService implements UserDetailsService {
 
-	@Inject
+	@Autowired
 	private UserRepository userRepository;
 
 	@Override
